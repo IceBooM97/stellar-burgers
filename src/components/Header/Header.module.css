@@ -1,0 +1,23 @@
+.header {    
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #1C1C21;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;   
+}
+
+.logo {
+    margin-right: 150px;
+}

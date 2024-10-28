@@ -1,0 +1,16 @@
+.ingredientCard {
+    text-align: center;
+    max-width: 272px;
+    width: 100%;
+    position: relative;    
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.price {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
