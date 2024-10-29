@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import styles from "./App.module.css"
 
 import { getCards } from "../../utils/api.js"
-import CardsContainer from '../CardsContainer/CardsContainer';
 import Loader from '../Loader/Loader.jsx';
 import Header from '../Header/Header';
 import { BurgerIngredients } from '../BurgerIngredients/BurgerIngredients';
