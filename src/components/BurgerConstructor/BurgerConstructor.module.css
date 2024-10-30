@@ -1,0 +1,9 @@
+.burgerIngredients{
+    max-width: 600px;
+    width: 100%;
+}
+
+.scrollContainer{
+    height: calc(100vh - 262px);
+    
+}

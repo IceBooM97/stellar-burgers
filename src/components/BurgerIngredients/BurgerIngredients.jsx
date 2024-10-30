@@ -13,7 +13,7 @@ export const BurgerIngredients = ({ingredients}) => {
   const mainIngredients = ingredients.filter(ingredient => ingredient.type === 'main');
 
   return (    
-    <section className={`${styles.burgerIngredients} ml-5`}>
+    <section className={`${styles.burgerIngredients} ml-4`}>
         <h1 className='text text_type_main-large mt-10 mb-5'>Соберите бургер</h1>
         <Tabs />
         <div className={styles.scrollContainer + ` costom-scroll`}>

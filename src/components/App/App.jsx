@@ -6,6 +6,7 @@ import { getCards } from "../../utils/api.js"
 import Loader from '../Loader/Loader.jsx';
 import Header from '../Header/Header';
 import { BurgerIngredients } from '../BurgerIngredients/BurgerIngredients';
+import { BurgerConstructor } from '../BurgerConstructor/BurgerConstructor';
 
 
 
@@ -42,7 +43,7 @@ function App() {
       <Header className="text text_type_main-default"/>
       <main className={styles.main}>
         <BurgerIngredients ingredients={cardData}/>    
-        
+        <BurgerConstructor ingredients={cardData}/>
       </main>
       
       
