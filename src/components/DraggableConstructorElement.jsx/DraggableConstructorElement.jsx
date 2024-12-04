@@ -57,7 +57,7 @@ export const DraggableConstructorElement = ({ ingredient, index, moveIngredient,
       <ConstructorElement
         text={ingredient.name}
         price={ingredient.price}
-        thumbnail={ingredient.image}      
+        thumbnail={ingredient.image_mobile}      
         handleClose={() => handleRemove(ingredient.uniqueId)}          
       />
     </li>

@@ -6,7 +6,7 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useDrag } from "react-dnd";
 
-function IngredientCard({ ingredient, onClick }) {
+function IngredientCard({ ingredient, onClick, count }) {
 
   // ТЕСТ DND
   const [{ isDragging }, drag] = useDrag({
@@ -17,12 +17,14 @@ function IngredientCard({ ingredient, onClick }) {
     }),
   }); 
 
+  
+
   return (
     <li   
       ref={drag}   
       className={styles.ingredientCard + ` mt-8`}      
       onClick={() => onClick(ingredient)}
-      style={{ opacity: isDragging ? 0.5 : 1 }}
+      style={{ opacity: isDragging ? 0.5 : 1}}      
     >
       <img src={ingredient.image} alt={ingredient.name} />
       <span
@@ -32,7 +34,7 @@ function IngredientCard({ ingredient, onClick }) {
         {<CurrencyIcon type="primary" />}
       </span>
       <p className="text text_type_main-small">{ingredient.name}</p>
-      <Counter count={1} size="default" extraClass="m-1" />
+      {count > 0 && <Counter count={count} size="default" extraClass="m-1" />}
     </li>
   );
 }

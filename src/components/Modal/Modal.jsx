@@ -23,8 +23,8 @@ const Modal = ({
           {headerText && (
             <h2 className="text text_type_main-large">{headerText}</h2>
           )}
-          <button className={styles.closeIcon}>
-            <CloseIcon type="primary" onClick={onClose} />
+          <button className={styles.closeIcon} onClick={onClose}>
+            <CloseIcon type="primary" />
           </button>
         </div>
         <div className={styles.innerContainer}>
@@ -41,3 +41,4 @@ const Modal = ({
 };
 
 export default Modal;
+

@@ -1,6 +1,9 @@
 .navButton {
-    color: white;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px;    
+}
+
+.navButton:hover {
+    color: #F2F2F3;
 }

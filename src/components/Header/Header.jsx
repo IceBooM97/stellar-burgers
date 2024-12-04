@@ -13,18 +13,21 @@ const buttons = [
   {
     id: 1,
     name: "Конструктор",
-    icon: <BurgerIcon type="primary" />
+    icon: <BurgerIcon type="primary" />,
+    isActive: true
   },
   {
     id: 2,
     name: "Лента заказов",
-    icon: <ListIcon type="primary" />
+    icon: <ListIcon type="primary" />,
+    isActive: false
   },
   {id: 3},
   {
     id: 4,
     name: "Личный кабинет",
-    icon: <ProfileIcon type="primary" />
+    icon: <ProfileIcon type="primary" />,
+    isActive: false
   }
 ];
 
@@ -37,17 +40,19 @@ function Header() {
             if (btn.id===3){
               return(
               <li key={'logo'} className={styles.logo}>
-              <a href="#" ><Logo /></a>
+              <a href="/#" ><Logo /></a>
             </li>
             )
             } else {
-              return(
+              return(                                
               <NavButton
                 key={btn.id}
-                link={"#"}
+                link={"/#"}
                 icon={btn.icon}
                 text={btn.name}
-              />)
+                isActive={btn.isActive}
+              />
+            )
             }
           })}                
         </ul>

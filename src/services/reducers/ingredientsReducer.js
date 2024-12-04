@@ -4,7 +4,8 @@ import {
   REMOVE_INGREDIENT,
   UPDATE_CONSTRUCTOR_INGREDIENTS,
   SET_BUN,
-} from '../actions/ingredient';
+  UPDATE_INGREDIENT_COUNT,
+} from "../actions/ingredient";
 
 const initialState = {
   ingredients: [],
@@ -22,7 +23,10 @@ const ingredientsReducer = (state = initialState, action) => {
     case ADD_INGREDIENT:
       return {
         ...state,
-        constructorIngredients: [...state.constructorIngredients, action.payload],
+        constructorIngredients: [
+          ...state.constructorIngredients,
+          action.payload,
+        ],
       };
     case REMOVE_INGREDIENT:
       return {
@@ -40,6 +44,15 @@ const ingredientsReducer = (state = initialState, action) => {
       return {
         ...state,
         bun: action.payload,
+      };
+    case UPDATE_INGREDIENT_COUNT:
+      return {
+        ...state,
+        ingredients: state.ingredients.map((ingredient) =>
+          ingredient._id === action.payload.ingredientId
+            ? { ...ingredient, __v: action.payload.count }
+            : ingredient
+        ),
       };
     default:
       return state;

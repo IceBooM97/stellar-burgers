@@ -1,22 +1,35 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import doneImage from "../../images/done1.png";
+import styles from "./OrderDetails.module.css";
+import Loader from "../Loader/Loader";
+
 export const OrderDetails = () => {
+  const { orderNumber, isLoading, error } = useSelector(state => state.order);
+
+  if (isLoading) {
+    <Loader />
+  }
+  if (error) {
+    return <p className="text text_type_main-medium text_color_error">Произошла ошибка при оформлении заказа</p>;
+  }
+
   return (
-    <>
+    <div className={styles.orderDetails}>
       <p
-        style={{
-          textShadow:
-            "rgba(51, 51, 225, 0.5) 0px 0px 15px, rgba(51, 51, 225, 0.25) 0px 0px 15px, rgba(51, 51, 225, 0.25) 0px 0px 15px",
-        }} className="text text_type_digits-large mt-15"
+        className={`text text_type_digits-large mb-8 ${styles.orderNumber}`}
       >
-        034536
+        {orderNumber}
       </p>
-      <p className="text text_type_main-medium mt-8">идентификатор заказа</p>
-      <img src={doneImage} alt="Картинка выполненной работы" className="mt-15 mb-15"/>
-      <p className="text text_type_main-small mb-2">
+      <p className="text text_type_main-medium mb-15">идентификатор заказа</p>
+      <img src={doneImage} alt="Заказ принят" className={`${styles.doneImage} mb-15`} />
+      <p className="text text_type_main-default mb-2">
         Ваш заказ начали готовить
       </p>
-      <p className="text text_type_main-default text_color_inactive mb-15">Дождитесь готовности на орбитальной станции</p>
-    </>
+      <p className="text text_type_main-default text_color_inactive mb-30">
+        Дождитесь готовности на орбитальной станции
+      </p>
+    </div>
   );
 };
+
